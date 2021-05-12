@@ -25,3 +25,11 @@ model users {
   createdAt DateTime @default(now()) @db.Timestamp(6)
   updatedAt DateTime @default(now()) @db.Timestamp(6)
 }
+
+model categories {
+  id        Int      @id @default(autoincrement())
+  title     String
+  slug      String
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @default(now()) @db.Timestamp(6)
+}
