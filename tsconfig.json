@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "lib": ["es2018", "esnext.asynciterable"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": false,
+    "baseUrl": ".",
+    "paths": {
+        "@database/*": ["./src/database/*"],
+        "@server/*": ["./src/server/*"],
+        "@services/*": ["./src/services/*"],
+        "@models/*": ["./src/models/*"],
+        "@resolvers/*": ["./src/resolvers/*"]
+    },
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
