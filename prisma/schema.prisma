@@ -13,23 +13,27 @@ model migrations {
   name      String @db.VarChar
 }
 
-model users {
+model User {
   id        Int      @id @default(autoincrement())
   name      String
   email     String   @unique @db.VarChar(255)
   password  String   @db.VarChar(255)
-  roles     String[] @db.Char(255)
+  roles     String[]
   birthday  String   @db.VarChar(10)
   cpf       String   @unique @db.VarChar(15)
   phone     String   @db.VarChar(27)
   createdAt DateTime @default(now()) @db.Timestamp(6)
   updatedAt DateTime @default(now()) @db.Timestamp(6)
+
+  @@map("users")
 }
 
-model categories {
+model Category {
   id        Int      @id @default(autoincrement())
   title     String
   slug      String
   createdAt DateTime @default(now()) @db.Timestamp(6)
   updatedAt DateTime @default(now()) @db.Timestamp(6)
+
+  @@map("categories")
 }

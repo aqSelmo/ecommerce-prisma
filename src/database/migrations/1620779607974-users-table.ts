@@ -31,8 +31,7 @@ export class usersTable1620779607974 implements MigrationInterface {
       },
       {
         name: 'roles',
-        type: 'char',
-        length: '255',
+        type: 'text',
         isNullable: false,
         isArray: true,
       },

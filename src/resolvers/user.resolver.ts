@@ -1,7 +1,8 @@
 import { User } from '@models/user.model';
 import { UserService } from '@services/user.service';
 import { UserDto } from 'src/dto/user.dto';
-import { Arg, Mutation, Query, Resolver } from 'type-graphql';
+import { Roles } from 'src/enums/roles.enum';
+import { Arg, Authorized, Mutation, Query, Resolver } from 'type-graphql';
 
 @Resolver(of => User)
 export class UserResolver {
@@ -16,7 +17,8 @@ export class UserResolver {
     return this.usersService.find();
   }
 
-  @Query(returns => [User])
+  @Authorized(Roles.ADMIN)
+  @Query(returns => User)
   async showUser(
     @Arg('id', { validate: true, nullable: false }) userId: number
   ) {
